@@ -1,0 +1,4 @@
+netmiko==3.4.0
+pandas==1.4.0
+openpyxl==3.0.9
+getpass4==0.0.14.1
