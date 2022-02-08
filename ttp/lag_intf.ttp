@@ -1,0 +1,12 @@
+interface Bridge-Aggregation{{ interface }}
+ port access vlan {{ access_vlan }}
+ port link-mode {{ link_mode }}
+ jumboframe {{ jumbo }} {{ jumbo_mtu }}
+ port link-type {{ link_type }}
+ port trunk permit vlan {{ vlan_list | ORPHRASE }}
+ port hybrid vlan {{ vlan_list | ORPHRASE }} tagged
+ port hybrid pvid vlan {{ hybrid_pvid }}
+ port trunk pvid vlan {{ trunk_pvid }}
+ port link-aggregation group {{ lag_group }}
+ link-aggregation mode {{ lacp_mode }}
+ 

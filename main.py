@@ -19,7 +19,7 @@ print("Gathering Device")
 
 device = {
         "device_type":"hp_comware",
-        "host":"172.19.20.21",
+        "host":"172.19.20.30.",
         "username":"admin",
         "password":password,
         }
@@ -44,6 +44,8 @@ cmw_gig_ports = (net_connect.send_command('display current', use_ttp=True, ttp_t
 
 cmw_xge_ports = (net_connect.send_command('display current', use_ttp=True, ttp_template='ttp/xge_intf.ttp'))
 
+cmw_lag_ports = (net_connect.send_command('display current', use_ttp=True, ttp_template='ttp/lag_intf.ttp'))
+
 os.system('mkdir output')
 
 clear()
@@ -55,6 +57,10 @@ cmw_gig_ports_df.to_csv('./output/gig_ports.csv', index = False)
 cmw_xge_ports_df = pd.DataFrame.from_dict(cmw_xge_ports[0][0])
 
 cmw_xge_ports_df.to_csv('./output/xge_ports.csv', index = False)
+
+cmw_lag_ports_df = pd.DataFrame.from_dict(cmw_lag_ports[0][0])
+
+cmw_lag_ports_df.to_csv('./output/lag_ports.csv', index = False)
 
 cmw_l3vlan_df = pd.DataFrame.from_dict(cmw_l3_vlan)
 
