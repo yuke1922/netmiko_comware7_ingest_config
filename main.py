@@ -19,8 +19,8 @@ print("Gathering Device")
 
 device = {
         "device_type":"hp_comware",
-        "host":"172.19.20.21",
-        "username":"admin",
+        "host":"172.19.43.32",
+        "username":"lmc-da",
         "password":password,
         }
 clear()
